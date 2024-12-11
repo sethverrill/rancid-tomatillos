@@ -12,3 +12,6 @@
 7.  Go to `http://localhost:3000/` and you should see a page with some starter elements
 8.  Enter `control + c` in your terminal to stop running the React app at any time
 9. To run Cypress tests, use `npx cypress open`
+
+
+I AM EDITING THIS FILE
