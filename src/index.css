@@ -22,6 +22,12 @@ body {
   background-color: #f4f4f4;
   border-radius: 15px; 
   width: 200px; 
+  cursor: pointer;
+}
+
+.MoviesContainer div:hover {
+  transform: scale(1.05); 
+  background-color: #e0e0e0; 
 }
 
 .MoviesContainer img {
