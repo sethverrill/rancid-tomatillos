@@ -33,7 +33,8 @@ body {
 .MoviesContainer img {
   width: 100%; 
   height: auto; 
-  border-top: 10px; 
+  border-top-left-radius: 10px; 
+  border-top-right-radius: 10px; 
 }
 
 .MoviesContainer p {
