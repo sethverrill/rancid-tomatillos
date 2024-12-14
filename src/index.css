@@ -7,44 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.MoviesContainer {
-  display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-evenly; 
-  gap: 20px; 
-  padding: 20px;
-}
-
-.MoviesContainer div {
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  background-color: #f4f4f4;
-  border-radius: 15px; 
-  width: 200px; 
-  cursor: pointer;
-}
-
-.MoviesContainer div:hover {
-  transform: scale(1.05); 
-  background-color: #e0e0e0; 
-}
-
-.MoviesContainer img {
-  width: 100%; 
-  height: auto; 
-  border-top-left-radius: 10px; 
-  border-top-right-radius: 10px; 
-}
-
-.MoviesContainer p {
-  margin: auto;
-  background-color: white;
-  color: black; 
-  text-align: center; 
-  font-size: 16px;
-  font-weight: bold; 
-}
 
 
 code {

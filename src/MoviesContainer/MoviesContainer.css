@@ -1,0 +1,64 @@
+.MoviesContainer {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-evenly; 
+  gap: 20px; 
+  padding: 20px;
+}
+
+.MoviesContainer div {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 15px; 
+  width: 200px; 
+  cursor: pointer;
+}
+
+.MoviesContainer div:hover {
+  transform: scale(1.05); 
+  background-color: #ffffff; 
+}
+
+.MoviesContainer img {
+  width: 100%; 
+  height: auto; 
+  border-top-left-radius: 10px; 
+  border-top-right-radius: 10px; 
+}
+
+.MoviesContainer p {
+  background-color: white;
+  color: black; 
+  text-align: center; 
+  font-size: 16px;
+  font-weight: bold; 
+}
+
+.VoterBlock {
+  display: flex;
+  height: 21px;
+  width: 100%;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.VoterBlock p {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 0px;
+}
+.VoterBlock div {
+  width: 10px;
+}
+.VoterBlock img {
+  pointer-events: auto;
+  width: 20px;
+  border: none;
+  padding: 0;
+} 
+
+.VoterBlock img:hover {
+  transform: scale(1.3); 
+}

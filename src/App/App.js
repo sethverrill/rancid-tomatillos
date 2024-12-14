@@ -1,10 +1,10 @@
 import "./App.css";
-import searchIcon from "../icons/search.png";
+// import searchIcon from "../icons/search.png";
 
 // Example imports (for later):
-import { useState, useEffect } from "react";
+import { useState, /*useEffect*/ } from "react";
 import moviePostersData from '../data/movie_posters';
-import movieDetails from '../data/movie_details';
+// import movieDetails from '../data/movie_details';
 import MoviesContainer from '../MoviesContainer/MoviesContainer';
 import MovieDetails from "../MovieDetails/MovieDetails";
 
