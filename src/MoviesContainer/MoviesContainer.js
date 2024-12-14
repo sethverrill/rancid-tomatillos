@@ -1,31 +1,35 @@
-import './MoviesContainer.css';
-import upvoteIcon from '../icons/upvote.png'
-import downvoteIcon from '../icons/downvote.png'
+import "./MoviesContainer.css";
+import upvoteIcon from "../icons/upvote.png";
+import downvoteIcon from "../icons/downvote.png";
 
-function Movies({ moviePosters, setMovies }) {
-
-  function vote(id, voteChange) {
+function MoviesContainer({ moviePosters, setMovies, setSelectedMovie }) {
+  function vote(id, voteChange, event) {
+    event.stopPropagation()
     const updatedMovie = moviePosters.map((movieData) => {
       if (movieData.id === id) {
-        return {...movieData, vote_count: movieData.vote_count + voteChange}
+        return { ...movieData, vote_count: movieData.vote_count + voteChange };
       }
-      return movieData
-    }) 
-    return setMovies(updatedMovie)
+      return movieData;
+    });
+    return setMovies(updatedMovie);
   }
 
   return (
-    <section className='MoviesContainer'>
+    <section className="MoviesContainer">
       {moviePosters.map((movie) => (
-        <div key={movie.id}>
+        <div
+          key={movie.id}
+          className="movie-card"
+          onClick={() => setSelectedMovie(movie)}
+        >
           <img src={movie.poster_path} alt={`Poster for ${movie.id}`} />
-          <section className='VoterBlock'>
-            <div onClick={() => vote(movie.id, 1)}>
-              <img src={upvoteIcon} alt={'Upvote Button'} />
+          <section className="VoterBlock">
+            <div onClick={(event) => vote(movie.id, 1, event)}>
+              <img src={upvoteIcon} alt={"Upvote Button"} />
             </div>
             <p>{movie.vote_count}</p>
-            <div onClick={() => vote(movie.id, -1)}>
-              <img src={downvoteIcon} alt={'Downvote Button'} />
+            <div onClick={(event) => vote(movie.id, -1, event)}>
+              <img src={downvoteIcon} alt={"Downvote Button"} />
             </div>
           </section>
         </div>
@@ -34,4 +38,4 @@ function Movies({ moviePosters, setMovies }) {
   );
 }
 
-export default Movies;
+export default MoviesContainer;
