@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-direction: column; 
   align-items: center;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
   border-radius: 15px; 
   width: 200px; 
   cursor: pointer;
@@ -27,7 +27,7 @@ body {
 
 .MoviesContainer div:hover {
   transform: scale(1.05); 
-  background-color: #e0e0e0; 
+  background-color: #ffffff; 
 }
 
 .MoviesContainer img {
@@ -44,6 +44,18 @@ body {
   text-align: center; 
   font-size: 16px;
   font-weight: bold; 
+}
+
+.VoterBlock {
+  display: flex;
+}
+
+.VoterBlock img {
+  height: 20px;
+} 
+
+.VoterBlock img:hover {
+  transform: scale(1.5); 
 }
 
 
