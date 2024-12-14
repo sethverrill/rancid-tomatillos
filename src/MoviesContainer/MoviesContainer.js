@@ -1,5 +1,6 @@
 import './MoviesContainer.css';
-
+import upvoteIcon from '../icons/upvote.png'
+import downvoteIcon from '../icons/downvote.png'
 
 function Movies({ moviePosters }) {
   console.log('Type of moviePosters:', typeof moviePosters);
@@ -10,7 +11,11 @@ function Movies({ moviePosters }) {
       {moviePosters.map((movie) => (
         <div key={movie.id}>
           <img src={movie.poster_path} alt={`Poster for ${movie.id}`} />
-          <p>{movie.vote_count}</p>
+          <section class='VoterBlock'>
+            <img src={upvoteIcon} alt={'Upvote Button'} />
+            <p>{movie.vote_count}</p>
+            <img src={downvoteIcon} alt={'Downvote Button'} />
+          </section>
         </div>
       ))}
     </section>
