@@ -7,12 +7,29 @@ function MoviesContainer({ moviePosters, setMovies, setSelectedMovie }) {
     event.stopPropagation()
     const updatedMovie = moviePosters.map((movieData) => {
       if (movieData.id === id) {
+        const direction = voteChange > 0 ? "up" : "down"
+        let dataToSend = { 
+          "id": id,
+          "vote_direction": direction
+        }
+        fetch(`https://rancid-tomatillos-api.onrender.com/api/v1/movies/${id}`, {
+          method: "PATCH",
+          body: JSON.stringify(dataToSend),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
         return { ...movieData, vote_count: movieData.vote_count + voteChange };
       }
       return movieData;
     });
     return setMovies(updatedMovie);
   }
+
+
 
   return (
     <section className="MoviesContainer">
