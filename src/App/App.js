@@ -3,7 +3,7 @@ import "./App.css";
 
 // Example imports (for later):
 import { useState, useEffect } from "react";
-import moviePostersData from "../data/movie_posters";
+// import moviePostersData from "../data/movie_posters";
 import movieDetails from "../data/movie_details";
 import MoviesContainer from "../MoviesContainer/MoviesContainer";
 import MovieDetails from "../MovieDetails/MovieDetails";
@@ -12,7 +12,15 @@ import homeIcon from "../icons/home.png";
 function App() {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [selectedMovieDetails, setSelectedMovieDetails] = useState(null);
-  const [moviePosters, setMovies] = useState(moviePostersData);
+  const [moviePosters, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch("https://rancid-tomatillos-api.onrender.com/api/v1/movies")
+    .then(response => response.json())
+    .then(moviePosterData => {
+      setMovies(moviePosterData)
+    }).catch(error => console.log(error))
+  }, [])
 
   useEffect(() => {
     if (selectedMovie) {
@@ -53,3 +61,5 @@ function App() {
 }
 
 export default App;
+
+
