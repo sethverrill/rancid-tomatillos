@@ -1,7 +1,10 @@
 import "./MovieDetails.css";
-import homeIcon from "../icons/home.png";
 
 function MovieDetails({ selectedMovie, setSelectedMovie }) {
+  if (!selectedMovie) {
+    return <p>Loading movie details...</p>;
+  }
+
   return (
     <section className="MovieDetails">
       <figure className="MovieDetails-image">
@@ -13,13 +16,15 @@ function MovieDetails({ selectedMovie, setSelectedMovie }) {
       </figure>
       <section className="MovieDetails-content">
         <h2 className="movie-title">{selectedMovie.title}</h2>
-        <div className="genres">
-          {selectedMovie.genre_ids.map((genre, index) => (
-            <span key={index} className="genre-tag">
-              {genre}
-            </span>
-          ))}
-        </div>
+        {selectedMovie.genre_ids && (
+          <div className="genres">
+            {selectedMovie.genre_ids.map((genre, index) => (
+              <span key={index} className="genre-tag">
+                {genre}
+              </span>
+            ))}
+          </div>
+        )}
         <p className="overview">{selectedMovie.overview}</p>
       </section>
     </section>
