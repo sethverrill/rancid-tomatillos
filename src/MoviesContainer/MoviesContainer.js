@@ -28,8 +28,6 @@ function MoviesContainer({ moviePosters, setMovies, setSelectedMovie }) {
     return setMovies(updatedMovie);
   }
 
-
-
   return (
     <section className="MoviesContainer">
       {moviePosters.map((movie) => (
