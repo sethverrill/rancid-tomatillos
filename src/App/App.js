@@ -24,6 +24,7 @@ function App() {
 
   useEffect(() => {
     if (selectedMovie) {
+      setMovieDetails(null);
       fetch(`https://rancid-tomatillos-api.onrender.com/api/v1/movies/${selectedMovie.id}`, {
         headers: {
           "Content-Type": "application/json"
