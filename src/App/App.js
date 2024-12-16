@@ -18,7 +18,6 @@ function App() {
     fetch("https://rancid-tomatillos-api.onrender.com/api/v1/movies")
     .then(response => response.json())
     .then(moviePosterData => {
-      console.log(moviePosterData)
       setMovies(moviePosterData)
     }).catch(error => console.log(error))
   }, [])
