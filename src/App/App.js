@@ -7,7 +7,6 @@ import homeIcon from "../icons/home.png";
 import { Link, Route, Routes, useMatch } from "react-router-dom";
 
 function App() {
-  const [selectedMovie, setSelectedMovie] = useState(null);
   const [moviePosters, setMovies] = useState([]);
   const match = useMatch("/movie/:id");
 
@@ -30,7 +29,7 @@ function App() {
         )}
       </header>
       <Routes>
-        <Route path="/" element={<MoviesContainer moviePosters={moviePosters} setMovies={setMovies} setSelectedMovie={setSelectedMovie}/>}/>
+        <Route path="/" element={<MoviesContainer moviePosters={moviePosters} setMovies={setMovies}/>}/>
         <Route path="/movie/:id" element={<MovieDetails />}/>
       </Routes>
     </main>
