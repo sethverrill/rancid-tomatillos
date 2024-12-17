@@ -1,6 +1,7 @@
 import "./MoviesContainer.css";
 import upvoteIcon from "../icons/upvote.png";
 import downvoteIcon from "../icons/downvote.png";
+import { Link } from "react-router-dom";
 
 function MoviesContainer({ moviePosters, setMovies, setSelectedMovie }) {
   function vote(id, voteChange, event) {
@@ -34,9 +35,10 @@ function MoviesContainer({ moviePosters, setMovies, setSelectedMovie }) {
         <div
           key={movie.id}
           className="movie-card"
-          onClick={() => setSelectedMovie(movie)}
         >
-          <img src={movie.poster_path} alt={`Poster for ${movie.id}`} />
+          <Link to={`/movie/${movie.id}`}>
+            <img src={movie.poster_path} alt={`Poster for ${movie.id}`} />
+          </Link>
           <section className="VoterBlock">
             <div onClick={(event) => vote(movie.id, 1, event)}>
               <img src={upvoteIcon} alt={"Upvote Button"} />
