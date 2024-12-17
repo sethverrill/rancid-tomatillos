@@ -28,7 +28,7 @@ describe('Dashboard/Homepage wtv', () => {
   })
 
   it('upvote a movie', () => {
-    cy.intercept('POST', 'https://rancid-tomatillos-api.onrender.com/api/v1/movies', { 
+    cy.intercept('PATCH', 'https://rancid-tomatillos-api.onrender.com/api/v1/movies/155', { 
       vote_direction: "up" 
     })
 
@@ -40,9 +40,10 @@ describe('Dashboard/Homepage wtv', () => {
   })
 
   it('downvotes a movie', () => {
-    cy.intercept('POST', 'https://rancid-tomatillos-api.onrender.com/api/v1/movies', { 
+    cy.intercept('PATCH', 'https://rancid-tomatillos-api.onrender.com/api/v1/movies/680', { 
       vote_direction: "down" 
     })
+
     cy.get('.MoviesContainer > :nth-child(4)').find('section').as('lastMovie')
 
     cy.get('@lastMovie').find('p').contains('27642')
