@@ -1,0 +1,15 @@
+  {
+  "backdrop_path": "https://image.tmdb.org/t/p/original//8eihUxjQsJ7WvGySkVMC0EwbPAD.jpg",
+  "genre_ids": [
+      "Comedy",
+      "Thriller",
+      "Drama"
+  ],
+  "id": 496243,
+  "original_language": "ko",
+  "overview": "All unemployed, Ki-taek's family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.",
+  "popularity": 84.057,
+  "poster_path": "https://image.tmdb.org/t/p/original//7IiTTgloJzvGI1TAYymCfbfl3vT.jpg",
+  "release_date": "2019-05-30",
+  "title": "Parasite"
+}
