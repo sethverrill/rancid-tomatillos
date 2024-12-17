@@ -41,6 +41,10 @@ describe("Movie Details", () => {
       cy.get(".genre-tag").eq(2).should("contain", "Drama");
     });
     cy.get(".overview").should("contain", "All unemployed, Ki-taek's family takes peculiar interest in the wealthy and glamorous Parks for their livelihood until they get entangled in an unexpected incident.");
+    
+    cy.location().should((loc) => {
+      expect(loc.pathname).to.eq("/movie/496243")
+    })
   }) 
     
   it("has a functioning home button", () => {
@@ -48,8 +52,17 @@ describe("Movie Details", () => {
     cy.get('.movie-card img[alt="Poster for 496243"]')
       .click();
     cy.wait("@getMovieDetails")
-    cy.get(".home-button").click();
+    
+    cy.location().should((loc) => {
+      expect(loc.pathname).to.eq("/movie/496243")
+    })
+
+    cy.get("header").find('img').click();
     cy.get(".MoviesContainer").should("exist");
     cy.get(".movie-card").should("have.length", 4);
+
+    cy.location().should((loc) => {
+      expect(loc.pathname).to.eq("/")
+    })
   })
 });
