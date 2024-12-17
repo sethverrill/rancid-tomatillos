@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 function MovieDetails() {
   const [movieDetails, setMovieDetails] = useState(null);
-  
+
   const movieId = useParams().id
   useEffect(() => {
     fetch(`https://rancid-tomatillos-api.onrender.com/api/v1/movies/${movieId}`, {
