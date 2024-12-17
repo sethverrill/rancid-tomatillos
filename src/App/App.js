@@ -8,11 +8,12 @@ import { useState, useEffect } from "react";
 import MoviesContainer from "../MoviesContainer/MoviesContainer";
 import MovieDetails from "../MovieDetails/MovieDetails";
 import homeIcon from "../icons/home.png";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [moviePosters, setMovies] = useState([]);
-  const [movieDetails, setMovieDetails] = useState(null);
+  // const [movieDetails, setMovieDetails] = useState(null);
 
   useEffect(() => {
     fetch("https://rancid-tomatillos-api.onrender.com/api/v1/movies")
@@ -22,23 +23,23 @@ function App() {
     }).catch(error => console.log(error))
   }, [])
 
-  useEffect(() => {
-    if (selectedMovie) {
-      setMovieDetails(null);
-      fetch(`https://rancid-tomatillos-api.onrender.com/api/v1/movies/${selectedMovie.id}`, {
-        headers: {
-          "Content-Type": "application/json"
-        },
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          setMovieDetails(data);
-        })
-        .catch((error) =>
-          console.error("Error fetching movie details:", error)
-        );
-    }
-  }, [selectedMovie]);
+  // useEffect(() => {
+  //   if (selectedMovie) {
+  //     setMovieDetails(null);
+  //     fetch(`https://rancid-tomatillos-api.onrender.com/api/v1/movies/${selectedMovie.id}`, {
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //     })
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         setMovieDetails(data);
+  //       })
+  //       .catch((error) =>
+  //         console.error("Error fetching movie details:", error)
+  //       );
+  //   }
+  // }, [selectedMovie]);
 
   return (
     <main className="App">
@@ -53,19 +54,10 @@ function App() {
           </button>
         )}
       </header>
-      {selectedMovie && (
-        <MovieDetails
-          selectedMovie={movieDetails}
-          setSelectedMovie={setSelectedMovie}
-        />
-      )}
-      {!selectedMovie && (
-        <MoviesContainer
-          moviePosters={moviePosters}
-          setMovies={setMovies}
-          setSelectedMovie={setSelectedMovie}
-        />
-      )}
+      <Routes>
+        <Route path="/" element={<MoviesContainer moviePosters={moviePosters} setMovies={setMovies} setSelectedMovie={setSelectedMovie}/>}/>
+        <Route path="/movie/:id" element={<MovieDetails />}/>
+      </Routes>
     </main>
   );
 }
