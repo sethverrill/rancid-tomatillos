@@ -30,23 +30,23 @@ function MovieDetails() {
     <section className="MovieDetails">
       <figure className="MovieDetails-image">
         <img
-          src={movieDetails.backdrop_path}
-          alt={`Backdrop for ${movieDetails.title} `}
+          src={movieDetails?.backdrop_path}
+          alt={`Backdrop for ${movieDetails?.title} `}
           className="movie-image"
         />
       </figure>
       <section className="MovieDetails-content">
-        <h2 className="movie-title">{movieDetails.title}</h2>
-        {movieDetails.genre_ids && (
+        <h2 className="movie-title">{movieDetails?.title}</h2>
+        {movieDetails?.genre_ids && (
           <div className="genres">
-            {movieDetails.genre_ids.map((genre, index) => (
+            {movieDetails?.genre_ids.map((genre, index) => (
               <span key={index} className="genre-tag">
                 {genre}
               </span>
             ))}
           </div>
         )}
-        <p className="overview">{movieDetails.overview}</p>
+        <p className="overview">{movieDetails?.overview}</p>
       </section>
     </section>
   );
