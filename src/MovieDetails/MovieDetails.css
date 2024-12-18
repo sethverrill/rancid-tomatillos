@@ -5,6 +5,7 @@
   height: 100vh;
   overflow: hidden;
   box-sizing: border-box;
+  margin: 0 85px;
 }
 
 .MovieDetails-image {
