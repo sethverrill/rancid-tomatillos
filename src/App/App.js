@@ -36,6 +36,7 @@ function App() {
         {homePath && (
           <div className="search-bar">
             <input 
+            aria-label="Title Search Bar"
             type='text'
             value={titleFilter}
             onChange={(event) => {
