@@ -3,7 +3,7 @@ import upvoteIcon from "../icons/upvote.png";
 import downvoteIcon from "../icons/downvote.png";
 import { Link } from "react-router-dom";
 
-function MoviesContainer({ moviePosters, setMovies, setSelectedMovie }) {
+function MoviesContainer({ moviePosters = [], setMovies }) {
   function vote(id, voteChange, event) {
     event.stopPropagation()
     const updatedMovie = moviePosters.map((movieData) => {

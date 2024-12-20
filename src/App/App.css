@@ -42,3 +42,7 @@ p {
 .home-button img:hover {
   transform: scale(1.1);
 }
+
+.search-bar input::placeholder {
+  color: black;
+}
