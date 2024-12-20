@@ -11,6 +11,7 @@ The app is built using React and leverages React Router for navigation. It consu
 The work on the project was completed over the course of 8 days.
 
 ## How to Use
+![rancid gif](/src/ReadMe%20photos/rancidgif.gif)
 1. Visit the deployed site: [Rancid Tomatillos](https://lustrous-mochi-8ef560.netlify.app/).
 2. Browse the homepage to see a selection of movies.
 3. Click on a movie poster to view detailed information about the selected movie.
